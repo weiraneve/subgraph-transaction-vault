@@ -1,55 +1,57 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
+# 依赖包目录
+node_modules/
 
-# compiled output
-/dev-dist
-/dist
-/tmp
-/out-tsc
-/logs
-/app
-/stubs/logs/*
-frontend/cypress/
-# Only exists if Bazel was run
-/bazel-out
+# 构建输出
+build/
+dist/
+generated/
 
-# dependencies
-/node_modules
+# IDE 和编辑器文件
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
 
-# profiling files
-chrome-profiler-events*.json
-speed-measure-plugin*.json
+# 环境变量文件
+.env
+.env.local
+.env.*.local
 
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
+# Graph CLI 生成的文件
+generated/
+build/
 
-# IDE - VSCode
-.vscode/*
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
+# 日志文件
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# misc
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-npm-debug.log
-yarn-error.log
-testem.log
-/typings
-
-# System Files
+# 系统文件
 .DS_Store
 Thumbs.db
-volume
-csv
 
-gitleaks-report.json
-*.sbom.spdx.json
+# 临时文件
+*.tmp
+*.temp
+
+# 本地配置文件
+.graphclientrc.yml
+.graph-client/
+
+# 测试覆盖率报告
+coverage/
+
+# 本地部署缓存
+.deploy/
+
+# subgraph 构建文件
+subgraph.yaml.bak
+**/subgraph.yaml.old
+
+# 其他
+.directory
+*.pid
+*.seed
+*.pid.lock
