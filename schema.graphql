@@ -1,0 +1,16 @@
+type Deposit @entity {
+  id: ID!
+  lender: Bytes!
+  amount: BigInt!
+  shares: BigInt!
+  timestamp: BigInt!
+  poolType: String!
+  blockNumber: BigInt!
+  transactionHash: Bytes!
+}
+
+type TotalDeposit @entity {
+  id: ID!
+  totalAmount: BigInt!
+  poolType: String!
+}

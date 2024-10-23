@@ -1,0 +1,49 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: JuniorPool
+    network: celo
+    source:
+      address: "0xaB5Ee8465c8C8d51e2cCc7d52AC53c19AF201Fa4"
+      abi: Contract
+      startBlock: 24782120
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Deposit
+        - TotalDeposit
+      abis:
+        - name: Contract
+          file: ./abis/Contract.json
+      eventHandlers:
+        - event: LiquidityDeposited(indexed address,uint256,uint256)
+          handler: handleJuniorLiquidityDeposited
+      file: ./src/mapping.ts
+
+  - kind: ethereum
+    name: SeniorPool
+    network: celo
+    source:
+      address: "0xc21a5485021C904Ed00b22BF774435a5B33c69bc"
+      abi: Contract
+      startBlock: 24782120
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Deposit
+        - TotalDeposit
+      abis:
+        - name: Contract
+          file: ./abis/Contract.json
+      eventHandlers:
+        - event: LiquidityDeposited(indexed address,uint256,uint256)
+          handler: handleSeniorLiquidityDeposited
+      file: ./src/mapping.ts
