@@ -5,6 +5,7 @@ node_modules/
 build/
 dist/
 generated/
+data/
 
 # IDE 和编辑器文件
 .idea/
