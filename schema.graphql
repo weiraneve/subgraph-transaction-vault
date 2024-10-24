@@ -14,3 +14,13 @@ type TotalDeposit @entity {
   totalAmount: BigInt!
   poolType: String!
 }
+
+type LiquidityDeposited @entity(immutable: true) {
+  id: Bytes!
+  sender: Bytes! # address
+  assets: BigInt! # uint256
+  shares: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

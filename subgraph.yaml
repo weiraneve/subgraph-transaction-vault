@@ -5,11 +5,11 @@ schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum
-    name: JuniorPool
+    name: juniorTranche
     network: celo
     source:
       address: "0xaB5Ee8465c8C8d51e2cCc7d52AC53c19AF201Fa4"
-      abi: Contract
+      abi: deposited
       startBlock: 24782120
     mapping:
       kind: ethereum/events
@@ -19,19 +19,19 @@ dataSources:
         - Deposit
         - TotalDeposit
       abis:
-        - name: Contract
-          file: ./abis/Contract.json
+        - name: deposited
+          file: ./abis/deposited.json
       eventHandlers:
         - event: LiquidityDeposited(indexed address,uint256,uint256)
           handler: handleJuniorLiquidityDeposited
-      file: ./src/mapping.ts
+      file: ./src/mappings/deposited.ts
 
   - kind: ethereum
-    name: SeniorPool
+    name: seniorPool
     network: celo
     source:
       address: "0xc21a5485021C904Ed00b22BF774435a5B33c69bc"
-      abi: Contract
+      abi: deposited
       startBlock: 24782120
     mapping:
       kind: ethereum/events
@@ -41,9 +41,9 @@ dataSources:
         - Deposit
         - TotalDeposit
       abis:
-        - name: Contract
-          file: ./abis/Contract.json
+        - name: deposited
+          file: ./abis/deposited.json
       eventHandlers:
         - event: LiquidityDeposited(indexed address,uint256,uint256)
           handler: handleSeniorLiquidityDeposited
-      file: ./src/mapping.ts
+      file: ./src/mappings/deposited.ts
