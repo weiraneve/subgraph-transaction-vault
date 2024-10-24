@@ -1,58 +1,38 @@
-# 依赖包目录
+# Graph CLI generated artifacts
+build/
+generated/
+
+# Dependency directories
 node_modules/
-
-# 构建输出
-build/
-dist/
+jspm_packages/
+tests/.bin/
+tests/.docker/
+tests/.latest.json
 generated/
-data/
 
-# IDE 和编辑器文件
-.idea/
-.vscode/
-*.swp
-*.swo
-.DS_Store
-
-# 环境变量文件
-.env
-.env.local
-.env.*.local
-
-# Graph CLI 生成的文件
-generated/
-build/
-
-# 日志文件
+# Logs
+logs
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# 系统文件
-.DS_Store
-Thumbs.db
+# Optional npm cache directory
+.npm
 
-# 临时文件
-*.tmp
-*.temp
+# Optional eslint cache
+.eslintcache
 
-# 本地配置文件
-.graphclientrc.yml
-.graph-client/
+# dotenv environment variables file
+.env
 
-# 测试覆盖率报告
-coverage/
+# Testing
+coverage
+coverage.json
 
-# 本地部署缓存
-.deploy/
+# Typechain
+typechain
+typechain-types
 
-# subgraph 构建文件
-subgraph.yaml.bak
-**/subgraph.yaml.old
-
-# 其他
-.directory
-*.pid
-*.seed
-*.pid.lock
+# Hardhat files
+cache
